@@ -1,0 +1,55 @@
+
+EDITOR=nvim
+VISUAL=nvim
+
+XKB_DEFAULT_LAYOUT=it
+# Dell Precision or XPS
+#XKB_DEFAULT_MODEL=precision_m
+#XKB_DEFAULT_VARIANT=basic
+
+# Cursor
+#XCURSOR_THEME=Adwaita
+#XCURSOR_SIZE=22
+
+XDG_SESSION_TYPE=wayland
+XDG_SESSION_DESKTOP=river
+XDG_CURRENT_DESKTOP=river
+DESKTOP_SESSION=river
+
+# for multi-gpu setup
+#WLR_DRM_DEVICES=/dev/dri/card0
+
+# QT
+QT_QPA_PLATFORM=wayland-egl
+QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# SDL
+#SDL_VIDEODRIVER=wayland
+
+# Clutter
+#CLUTTER_BACKEND=wayland
+
+# Elementary/EFL
+#ECORE_EVAS_ENGINE=wayland_egl
+#ELM_ENGINE=wayland_egl
+#ELM_DISPLAY=wl
+#ELM_ACCEL=opengl
+
+# Mozilla
+MOZ_ENABLE_WAYLAND=1
+# Open links in external applications in Firefox
+#MOZ_DBUS_REMOTE=1
+
+# libseat is a library that wlroots require
+# better is to use seatd
+#LIBSEAT_BACKEND=logind
+
+# needed for some Java applications
+#_JAVA_AWT_WM_NONREPARENTING=1
+
+# old stuff
+##QT_PLUGIN_PATH=/usr/lib/qt/plugins
+#JAVA_FONTS=/usr/share/fonts/TTF
+##_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+#MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk/jre
+#MATLAB_LOG_DIR={insert_path}
