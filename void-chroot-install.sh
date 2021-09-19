@@ -13,6 +13,8 @@ touch $ignorefile
 
 # set packages to be ignored as dependecy
 echo "ignorepkg=sudo" >> $ignorefile
+echo "ignorepkg=wpa_supplicant" >> $ignorefile
+echo "ignorepkg=dhcpcd" >> $ignorefile
 echo "ignorepkg=nvi" >> $ignorefile
 echo "ignorepkg=linux-firmware-amd" >> $ignorefile
 echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
