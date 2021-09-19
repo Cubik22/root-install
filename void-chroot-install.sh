@@ -13,6 +13,9 @@ touch $ignorefile
 
 # set packages to be ignored as dependecy
 echo "ignorepkg=sudo" >> $ignorefile
+echo "ignorepkg=btrfs-progs" >> $ignorefile
+echo "ignorepkg=xfsprogs" >> $ignorefile
+echo "ignorepkg=f2fs-tools" >> $ignorefile
 echo "ignorepkg=wpa_supplicant" >> $ignorefile
 echo "ignorepkg=dhcpcd" >> $ignorefile
 echo "ignorepkg=nvi" >> $ignorefile
@@ -30,7 +33,7 @@ echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
 #EOT
 
 # install basic packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system linux-headers cryptsetup opendoas neovim iwd openresolv
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system linux-headers opendoas neovim iwd openresolv
 
 # in order to have network
 cp /etc/resolv.conf /mnt/etc/resolv.conf
