@@ -55,4 +55,4 @@ GRUB_SAVEDEFAULT=true
 GRUB_DISABLE_SUBMENU=y
 
 # Uncomment to enable os-prober
-#GRUB_DISABLE_OS_PROBER=false
+GRUB_DISABLE_OS_PROBER=false
