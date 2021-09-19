@@ -75,7 +75,7 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 
 # execute root_install.sh
 
-# edit /etc/default/grub
+# edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
 # link doas to sudo (already done in root_install.sh)
 #ln -s /usr/bin/doas /usr/bin/sudo
