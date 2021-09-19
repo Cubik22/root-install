@@ -21,16 +21,6 @@ echo "ignorepkg=nvi" >> $ignorefile
 echo "ignorepkg=linux-firmware-amd" >> $ignorefile
 echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
 
-# install base packages, y flag for answering always yes
-#XBPS_ARCH=x86_64-musl xbps-install -S -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-files ncurses coreutils findutils diffutils libgcc dash bash grep gzip file sed gawk less util-linux which tar man-pages mdocml shadow e3fsprogs dosfstools procps-ng tzdata pciutils usbutils iana-etc openssh kbd iproute2 iputils iw iwd xbps neovim opendoas wifi-firmware void-artwork traceroute ethtool kmod acpid eudev runit-void removed-packages musl linux linux-headers
-
-#XBPS_ARCH=x86_64-musl xbps-install -S -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl"
-#while read pkg; do
-#	XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" $pkg
-#done <<EOT
-#$(cat packages.txt)
-#EOT
-
 # install basic packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system cronie opendoas neovim iwd openresolv
 
