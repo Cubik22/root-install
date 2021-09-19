@@ -22,7 +22,7 @@ echo "ignorepkg=linux-firmware-amd" >> $ignorefile
 echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
 
 # install basic packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system cronie opendoas neovim iwd openresolv
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system cronie opendoas grub-x86_64-efi neovim iwd openresolv
 
 # in order to have network
 cp /etc/resolv.conf /mnt/etc/resolv.conf
@@ -75,6 +75,8 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 
 # execute root_install.sh
 
+# edit /etc/default/grub
+
 # link doas to sudo (already done in root_install.sh)
 #ln -s /usr/bin/doas /usr/bin/sudo
 
@@ -104,7 +106,6 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 #/swapfile none swap defaults 0 0
 
 # install grub
-#xbps-install -S grub-x86_64-efi
 #grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
 # ensure all installed packages are configured properly
