@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# before running this script mount /mnt and /mnt/boot
+
 # create ignorepkg file
 xbpsconf=/mnt/etc/xbps.d
 ignorefile="$xbpsconf"/ignorepkg.conf
@@ -62,3 +64,23 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 
 # set timezone
 #ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+
+# set root password
+#passwd
+
+# create user
+#useradd -m -G wheel,input,audio,video lollo
+#passwd lollo
+
+# modify /etc/fstab
+
+# install grub
+#xbps-install grub-x86_64-efi
+#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+
+# ensure all installed packages are configured properly
+#xbps-reconfigure -fa
+
+# exit chroot and shutdown
+#exit
+#shutdown -r now
