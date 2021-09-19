@@ -70,11 +70,15 @@ cp /proc/mounts /etc/fstab
 # /swapfile none swap defaults 0 0
 
 # set root password
-#passwd
+#passwd root
+# set root default shell
+#chsh -s /bin/bash root
 
 # create user
 #useradd -m -G wheel,audio,video,input,bluetooth lollo
 #passwd lollo
+# set user default shell
+#chsh -s /bin/bash lollo
 
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
