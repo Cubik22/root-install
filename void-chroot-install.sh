@@ -3,17 +3,15 @@
 # before running this script mount /mnt and /mnt/boot
 # clone this repository already in /mnt (/mnt/root)
 
-# create ignorepkg file
+# set xbps variables
 xbpsconf=/mnt/etc/xbps.d
 ignorefile="$xbpsconf"/ignorepkg.conf
 
-# recreate file if already existent
+# create xbpsconf directory
 mkdir -p $xbpsconf
-rm -f $ignorefile
-touch $ignorefile
 
 # set packages to be ignored as dependecy
-echo "ignorepkg=sudo" >> $ignorefile
+echo "ignorepkg=sudo" > $ignorefile
 echo "ignorepkg=btrfs-progs" >> $ignorefile
 echo "ignorepkg=xfsprogs" >> $ignorefile
 echo "ignorepkg=f2fs-tools" >> $ignorefile
@@ -50,11 +48,13 @@ mount --rbind /run /mnt/run
 echo "voidlollo" > /mnt/etc/hostname
 
 # set options in /etc/rc.conf
-echo >> /mnt/etc/rc.conf
-echo "HARDWARECLOCK=\"UTC\"" >> /mnt/etc/rc.conf
-echo "KEYMAP=\"us\"" >> /mnt/etc/rc.conf
-echo "TTYS=3" >> /mnt/etc/rc.conf
-echo "CGROUP_MODE=hybrid" >> /mnt/etc/rc.conf
+cat << EOF >> /mnt/etc/rc.conf
+
+HARDWARECLOCK="UTC"
+KEYMAP="us"
+TTYS=3
+CGROUP_MODE=hybrid
+EOF
 
 # create fstab file from the mounted system
 # in the chroot manually configure it
@@ -62,21 +62,20 @@ cp /mnt/proc/mounts /mnt/etc/fstab
 
 # create brightness rule so video users can change brightness
 mkdir -p /mnt/etc/udev/rules.d
-touch /mnt/etc/udev/rules.d/backlight.rules
-echo "RUN+=\"/bin/chgrp video /sys/class/backlight/intel_backlight/brightness\"" >> /mnt/etc/udev/rules.d/backlight.rules
+echo "RUN+=\"/bin/chgrp video /sys/class/backlight/intel_backlight/brightness\"" > /mnt/etc/udev/rules.d/backlight.rules
 echo "RUN+=\"/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness\"" >> /mnt/etc/udev/rules.d/backlight.rules
 
 # set swappiness value
 mkdir -p /mnt/etc/sysctl.d
-touch /mnt/etc/sysctl.d/99-swappiness.conf
-echo "vm.swappiness=30" >> /mnt/etc/sysctl.d/99-swappiness.conf
+echo "vm.swappiness=30" > /mnt/etc/sysctl.d/99-swappiness.conf
 
 # enable periodic trim with cron
 mkdir -p /mnt/etc/cron.weekly
-touch /mnt/etc/cron.weekly/fstrim
-echo "#!/bin/sh" >> /mnt/etc/cron.weekly/fstrim
-echo >> /mnt/etc/cron.weekly/fstrim
-echo "fstrim /" >> /mnt/etc/cron.weekly/fstrim
+cat << EOF > /mnt/etc/cron.weekly/fstrim
+#!/bin/sh
+
+fstrim /
+EOF
 chmod u+x /mnt/etc/cron.weekly/fstrim
 
 # chroot into the new installation
