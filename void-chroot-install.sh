@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # before running this script mount /mnt and /mnt/boot
+# clone this repository already in /mnt (/mnt/root)
 
 # create ignorepkg file
 xbpsconf=/mnt/etc/xbps.d
@@ -88,7 +89,17 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 #useradd -m -G wheel,input,audio,video lollo
 #passwd lollo
 
+# create swap file
+#dd if=/dev/zero of=/swapfile bs=1G count=4 status=progress
+#chmod 600 /swapfile
+#mkswap /swapfile
+#swapon /swapfile
+
 # modify /etc/fstab
+# remove everything except /mnt and /mnt/boot and set them 0 1 and 0 2
+# use blkid to get UUID and set UUID=
+#tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
+#/swapfile none swap defaults 0 0
 
 # install grub
 #xbps-install -S grub-x86_64-efi
