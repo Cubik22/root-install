@@ -90,7 +90,7 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 #passwd
 
 # create user
-#useradd -m -G wheel,input,audio,video lollo
+#useradd -m -G wheel,audio,video,input,bluetooth lollo
 #passwd lollo
 
 # create swap file
