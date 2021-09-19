@@ -84,7 +84,7 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 # modify /etc/fstab
 
 # install grub
-#xbps-install grub-x86_64-efi
+#xbps-install -S grub-x86_64-efi
 #grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
 # ensure all installed packages are configured properly
