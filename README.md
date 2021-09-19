@@ -1,3 +1,3 @@
 # root-install
 
-scripts and files to install Arch/Void
+Scripts and files to install Arch/Void
