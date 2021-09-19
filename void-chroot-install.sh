@@ -59,6 +59,12 @@ echo "CGROUP_MODE=hybrid" >> /mnt/etc/rc.conf
 # in the chroot manually configure it
 cp /mnt/proc/mounts /mnt/etc/fstab
 
+# create brightness rule so video users can change brightness
+mkdir -p /mnt/etc/udev/rules.d
+touch /mnt/etc/udev/rules.d/backlight.rules
+echo "RUN+=\"/bin/chgrp video /sys/class/backlight/intel_backlight/brightness\"" >> /mnt/etc/udev/rules.d/backlight.rules
+echo "RUN+=\"/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness\"" >> /mnt/etc/udev/rules.d/backlight.rules
+
 # chroot into the new installation
 PS1='(chroot) # ' chroot /mnt/ /bin/bash
 
