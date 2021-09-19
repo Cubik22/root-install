@@ -73,6 +73,7 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 #ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
 # link also dbus and iwd
+#ln -s /etc/sv/<service> /etc/runit/runsvdir/default/
 
 # set root password
 #passwd
