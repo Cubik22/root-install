@@ -4,7 +4,7 @@ GRUB_DEFAULT=saved
 GRUB_TIMEOUT=5
 #GRUB_DISTRIBUTOR="Arch/Void"
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"
-#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nowatchdog"
+#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nowatchdog mem_sleep_default=deep"
 GRUB_CMDLINE_LINUX=""
 
 # Modules to preload
