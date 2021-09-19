@@ -10,7 +10,7 @@ cat "${root_install}"/environment >> /etc/environment
 cat "${root_install}"/locale.conf > /etc/locale.conf
 
 # grub config file generator
-#cat "${root_install}"/grub > /etc/default/grub
+cat "${root_install}"/grub > /etc/default/grub
 
 mkdir -p /etc/iwd
 
