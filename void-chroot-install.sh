@@ -34,7 +34,7 @@ echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
 #EOT
 
 # install basic packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system opendoas neovim iwd openresolv
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system cronie opendoas neovim iwd openresolv
 
 # in order to have network
 cp /etc/resolv.conf /mnt/etc/resolv.conf
