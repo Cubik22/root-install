@@ -64,9 +64,9 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 
 # Todo in chroot
 
-# execute root-install.sh
+# execute root_install.sh
 
-# link doas to sudo
+# link doas to sudo (already done in root_install.sh)
 #ln -s /usr/bin/doas /usr/bin/sudo
 
 # set timezone
