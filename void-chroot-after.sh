@@ -37,8 +37,6 @@ fstrim /
 EOF
 chmod u+x /etc/cron.weekly/fstrim
 
-# Todo in chroot
-
 # execute root_install.sh
 ./root_install.sh
 
