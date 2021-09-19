@@ -65,6 +65,8 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 # set timezone
 #ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
+# link also dbus and iwd
+
 # set root password
 #passwd
 
