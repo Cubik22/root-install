@@ -100,13 +100,16 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 #swapon /swapfile
 
 # modify /etc/fstab
-# remove everything except /mnt and /mnt/boot and set them 0 1 and 0 2
+# remove everything except /mnt and /mnt/boot 
+# set them to / and /boot 0 1 and 0 2
 # use blkid to get UUID and set UUID=
 #tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
 #/swapfile none swap defaults 0 0
 
 # install grub
 #grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+
+# after changing /etc/default/grub run update-grub
 
 # ensure all installed packages are configured properly
 #xbps-reconfigure -fa
