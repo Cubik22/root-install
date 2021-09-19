@@ -66,6 +66,19 @@ touch /mnt/etc/udev/rules.d/backlight.rules
 echo "RUN+=\"/bin/chgrp video /sys/class/backlight/intel_backlight/brightness\"" >> /mnt/etc/udev/rules.d/backlight.rules
 echo "RUN+=\"/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness\"" >> /mnt/etc/udev/rules.d/backlight.rules
 
+# set swappiness value
+mkdir -p /mnt/etc/sysctl.d
+touch /mnt/etc/sysctl.d/99-swappiness.conf
+echo "vm.swappiness=30" >> /mnt/etc/sysctl.d/99-swappiness.conf
+
+# enable periodic trim with cron
+mkdir -p /mnt/etc/cron.weekly
+touch /mnt/etc/cron.weekly/fstrim
+echo "#!/bin/sh" >> /mnt/etc/cron.weekly/fstrim
+echo >> /mnt/etc/cron.weekly/fstrim
+echo "fstrim /" >> /mnt/etc/cron.weekly/fstrim
+chmod u+x /mnt/etc/cron.weekly/fstrim
+
 # chroot into the new installation
 PS1='(chroot) # ' chroot /mnt/ /bin/bash
 
