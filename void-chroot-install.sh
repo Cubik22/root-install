@@ -59,6 +59,8 @@ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 
 # Todo in chroot
 
+# execute root-install.sh
+
 # link doas to sudo
 #ln -s /usr/bin/doas /usr/bin/sudo
 
