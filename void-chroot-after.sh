@@ -14,10 +14,6 @@ TTYS=3
 CGROUP_MODE=hybrid
 EOF
 
-# create fstab file from the mounted system
-# in the chroot manually configure it
-cp /proc/mounts /etc/fstab
-
 # integrate alsa in pipewire
 mkdir -p /etc/alsa/conf.d
 ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
@@ -63,10 +59,14 @@ chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 
+# create fstab file from the mounted system
+cp /proc/mounts /etc/fstab
+
 # modify /etc/fstab
-# remove everything except /mnt and /mnt/boot 
+# remove everything except /mnt and /mnt/boot
 # set them to / and /boot 0 1 and 0 2
-# use blkid to get UUID and set UUID=
+# use blkid to get UUID and set UUID= instead of path
+# add /tmp in ram and /swapfile
 # tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
 # /swapfile none swap defaults 0 0
 
@@ -87,6 +87,8 @@ swapon /swapfile
 # ensure all installed packages are configured properly
 #xbps-reconfigure -fa
 
-# exit chroot and shutdown
+# exit chroot
 #exit
+# reboot with shutdown or normal
 #shutdown -r now
+#reboot
