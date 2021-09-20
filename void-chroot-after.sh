@@ -1,9 +1,14 @@
 #!/bin/sh
 
 # execute after installation and in chroot
+# this script will run root_install.sh check everything is fine there
+
+# set variables
+username="lollo"
+hostname="voidlollo"
 
 # set hostname
-echo "voidlollo" > /etc/hostname
+echo "$hostname" > /etc/hostname
 
 # set options in /etc/rc.conf
 cat << EOF >> /etc/rc.conf
@@ -58,6 +63,29 @@ chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 
+# set root password
+echo "set password root"
+passwd root
+# set root default shell
+chsh -s /bin/bash root
+
+# create user
+useradd -m -G wheel,audio,video,input,bluetooth $username
+echo "set password $username"
+passwd $username
+# set user default shell
+chsh -s /bin/bash $username
+
+# edit /etc/default/grub (set GRUB_DISTRIBUTOR)
+
+# install grub
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+
+# after changing /etc/default/grub run update-grub
+
+# ensure all installed packages are configured properly
+xbps-reconfigure -fa
+
 # create fstab file from the mounted system
 cp /proc/mounts /etc/fstab
 
@@ -68,27 +96,6 @@ cp /proc/mounts /etc/fstab
 # add /tmp in ram and /swapfile
 # tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
 # /swapfile none swap defaults 0 0
-
-# set root password
-#passwd root
-# set root default shell
-#chsh -s /bin/bash root
-
-# create user
-#useradd -m -G wheel,audio,video,input,bluetooth lollo
-#passwd lollo
-# set user default shell
-#chsh -s /bin/bash lollo
-
-# edit /etc/default/grub (set GRUB_DISTRIBUTOR)
-
-# install grub
-#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-
-# after changing /etc/default/grub run update-grub
-
-# ensure all installed packages are configured properly
-#xbps-reconfigure -fa
 
 # exit chroot
 #exit
