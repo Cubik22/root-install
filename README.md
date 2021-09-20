@@ -1,3 +1,3 @@
 # root-install
 
-Scripts and files to install Arch/Void
+Scripts and files to install Arch/Artix/Void
