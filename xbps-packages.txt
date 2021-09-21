@@ -36,6 +36,8 @@ font-awesome5
 seatd
 wayland
 wayland-utils
+wayland-protocols
+wlroots
 glfw-wayland
 qt5-wayland
 qt6-wayland
