@@ -35,4 +35,4 @@ mount --rbind /dev /mnt/dev
 mount --rbind /run /mnt/run
 
 # chroot into the new installation
-PS1='(chroot) # ' chroot /mnt/ /bin/bash
+PS1='(chroot)# ' chroot /mnt/ /bin/bash
