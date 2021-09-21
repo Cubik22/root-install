@@ -9,6 +9,9 @@ cat "${root_install}"/environment >> /etc/environment
 # setting locales
 cat "${root_install}"/locale.conf > /etc/locale.conf
 
+# rc initialization file
+cat "${root_install}"/rc.conf > /etc/rc.conf
+
 # grub config file generator
 cat "${root_install}"/grub > /etc/default/grub
 

@@ -10,14 +10,14 @@ hostname="voidlollo"
 # set hostname
 echo "$hostname" > /etc/hostname
 
-# set options in /etc/rc.conf
-cat << EOF >> /etc/rc.conf
-
-HARDWARECLOCK="UTC"
-KEYMAP="us"
-TTYS=3
-CGROUP_MODE=hybrid
-EOF
+# set options in /etc/rc.conf (already done in root_install.sh)
+#cat << EOF >> /etc/rc.conf
+#
+#HARDWARECLOCK="UTC"
+#KEYMAP="us"
+#TTYS=3
+#CGROUP_MODE=hybrid
+#EOF
 
 # integrate alsa in pipewire
 mkdir -p /etc/alsa/conf.d
