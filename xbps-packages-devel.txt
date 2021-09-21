@@ -1,0 +1,5 @@
+wayland-devel
+wlroots-devel
+libxkbcommon-devel
+libevdev-devel
+pixman-devel
