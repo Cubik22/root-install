@@ -20,6 +20,11 @@ DESKTOP_SESSION=river
 # for multi-gpu setup
 #WLR_DRM_DEVICES=/dev/dri/card0
 
+# seat management
+# seatd is more minimal
+LIBSEAT_BACKEND=seatd
+#LIBSEAT_BACKEND=logind
+
 # QT
 QT_QPA_PLATFORM=wayland-egl
 QT_WAYLAND_DISABLE_WINDOWDECORATION=1
@@ -40,10 +45,6 @@ QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 MOZ_ENABLE_WAYLAND=1
 # Open links in external applications in Firefox
 #MOZ_DBUS_REMOTE=1
-
-# libseat is a library that wlroots require
-# better is to use seatd
-#LIBSEAT_BACKEND=logind
 
 # needed for some Java applications
 #_JAVA_AWT_WM_NONREPARENTING=1
