@@ -57,6 +57,7 @@ ln -s /etc/sv/cronie /etc/runit/runsvdir/default/
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
 ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
+ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
 
 # create swap file
 dd if=/dev/zero of=/swapfile bs=1G count=4 status=progress
