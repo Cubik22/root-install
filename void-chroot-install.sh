@@ -22,7 +22,7 @@ echo "ignorepkg=linux-firmware-amd" >> $ignorefile
 echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
 
 # install basic packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" base-system cronie opendoas grub-x86_64-efi neovim iwd openresolv
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" $(cat xbps-packages.txt)
 
 # in order to have network
 cp /etc/resolv.conf /mnt/etc/resolv.conf
