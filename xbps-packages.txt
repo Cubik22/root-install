@@ -56,7 +56,6 @@ nnn
 htop
 tlp
 powertop
-upower
 ncdu
 imv
 mpv
