@@ -2,6 +2,7 @@ base-system
 base-devel
 man-pages-devel
 man-pages-posix
+scdoc
 cronie
 opendoas
 grub-x86_64-efi
