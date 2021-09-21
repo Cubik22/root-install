@@ -72,7 +72,7 @@ passwd root
 chsh -s /bin/bash root
 
 # create user
-useradd -m -G wheel,audio,video,input,bluetooth $username
+useradd -m -G wheel,audio,video,input,bluetooth,_seatd $username
 echo "set password $username"
 passwd $username
 # set user default shell
