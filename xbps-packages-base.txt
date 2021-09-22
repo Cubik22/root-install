@@ -52,7 +52,6 @@ foot
 wob
 grim
 slurp
-Waybar
 fzf
 exa
 bat
