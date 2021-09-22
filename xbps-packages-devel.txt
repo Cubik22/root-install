@@ -1,5 +1,16 @@
+musl-devel
 wayland-devel
 wlroots-devel
 libxkbcommon-devel
 libevdev-devel
 pixman-devel
+gtkmm-devel
+jsoncpp-devel
+libsigc++-devel	
+fmt-devel
+spdlog
+glib-devel
+gtk-layer-shell-devel
+gobject-introspection
+libgirepository-devel
+libnl-devel
