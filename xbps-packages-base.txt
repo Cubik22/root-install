@@ -8,6 +8,7 @@ opendoas
 grub-x86_64-efi
 git
 cmake
+meson
 rust
 zig
 go
