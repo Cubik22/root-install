@@ -36,6 +36,8 @@ noto-fonts-emoji
 font-adobe-source-code-pro
 font-awesome5
 seatd
+libinput
+libinput-gestures
 wayland
 wayland-utils
 wayland-protocols
@@ -57,6 +59,7 @@ exa
 bat
 nnn
 htop
+upower
 tlp
 powertop
 ncdu
