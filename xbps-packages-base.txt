@@ -38,6 +38,7 @@ font-fira-otf
 font-fira-ttf
 font-firacode
 freefont-ttf
+cantarell-fonts
 ttf-opensans
 fonts-roboto-ttf
 liberation-fonts-ttf
