@@ -1,4 +1,10 @@
 musl-devel
+pipewire-devel
+alsa-lib-devel
+alsa-tools-devel
+pulseaudio-devel
+libbluetooth-devel
+libinput-devel
 wayland-devel
 wlroots-devel
 libxkbcommon-devel
@@ -9,8 +15,9 @@ jsoncpp-devel
 libsigc++-devel	
 fmt-devel
 spdlog
+eudev-libudev-devel
 glib-devel
 gtk-layer-shell-devel
 gobject-introspection
 libgirepository-devel
-libnl-devel
+libnl3-devel
