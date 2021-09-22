@@ -4,6 +4,7 @@ alsa-lib-devel
 alsa-tools-devel
 pulseaudio-devel
 libbluetooth-devel
+freetype-devel
 libinput-devel
 wayland-devel
 wlroots-devel
