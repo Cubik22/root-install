@@ -34,6 +34,13 @@ noto-fonts-ttf
 noto-fonts-cjk
 noto-fonts-emoji
 font-adobe-source-code-pro
+font-fira-otf
+font-fira-ttf
+font-firacode
+freefont-ttf
+ttf-opensans
+fonts-roboto-ttf
+liberation-fonts-ttf
 font-awesome5
 seatd
 libinput
