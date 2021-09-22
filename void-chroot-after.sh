@@ -92,12 +92,12 @@ xbps-reconfigure -fa
 cp /proc/mounts /etc/fstab
 
 # modify /etc/fstab
+# add /tmp in ram and /swapfile
+echo "tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0" >> /etc/fstab
+echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 # remove everything except /mnt and /mnt/boot
 # set them to / and /boot 0 1 and 0 2
 # use blkid to get UUID and set UUID= instead of path
-# add /tmp in ram and /swapfile
-# tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
-# /swapfile none swap defaults 0 0
 
 # exit chroot
 #exit
