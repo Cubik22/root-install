@@ -29,7 +29,7 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.rep
 
 # in order to have network
 cp /etc/resolv.conf /mnt/etc/resolv.conf
-cp /etc/hosts /mnt/etc/hosts
+#cp /etc/hosts /mnt/etc/hosts
 
 # mount pseudo-filesystems
 mount -t proc none /mnt/proc
