@@ -34,6 +34,7 @@ noto-fonts-ttf
 noto-fonts-cjk
 noto-fonts-emoji
 font-adobe-source-code-pro
+dejavu-fonts-ttf
 font-fira-otf
 font-fira-ttf
 font-firacode
