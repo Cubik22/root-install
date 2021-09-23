@@ -5,6 +5,7 @@ man-pages-posix
 scdoc
 cronie
 opendoas
+rng-tools
 gnupg2
 grub-x86_64-efi
 git
