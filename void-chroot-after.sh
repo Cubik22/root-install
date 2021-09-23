@@ -51,10 +51,10 @@ chmod u+x /etc/cron.weekly/fstrim
 # set timezone
 ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
-# remove unused tty
-rm /etc/runit/runsvdir/default/agetty-tty6
-rm /etc/runit/runsvdir/default/agetty-tty5
-rm /etc/runit/runsvdir/default/agetty-tty4
+# set unused tty not to start by default
+touch /etc/sv/agetty-tty6/down
+touch /etc/sv/agetty-tty5/down
+touch /etc/sv/agetty-tty4/down
 
 # link services
 ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
@@ -90,9 +90,6 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
 # after changing /etc/default/grub run update-grub
 
-# ensure all installed packages are configured properly
-xbps-reconfigure -fa
-
 # create fstab file from the mounted system
 cp /proc/mounts /etc/fstab
 
@@ -104,6 +101,10 @@ echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 # set them to / and /boot 0 1 and 0 2
 # use blkid to get UUID and set UUID= instead of path
 echo "remember to edit /etc/fstab"
+
+# ensure all installed packages are configured properly
+#xbps-reconfigure -fa
+echo "remember to run 'xbps-reconfigure -fa'"
 
 # exit chroot
 #exit
