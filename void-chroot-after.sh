@@ -51,6 +51,11 @@ chmod u+x /etc/cron.weekly/fstrim
 # set timezone
 ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
+# remove unused tty
+rm /etc/runit/runsvdir/default/agetty-tty6
+rm /etc/runit/runsvdir/default/agetty-tty5
+rm /etc/runit/runsvdir/default/agetty-tty4
+
 # link services
 ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
 ln -s /etc/sv/cronie /etc/runit/runsvdir/default/
