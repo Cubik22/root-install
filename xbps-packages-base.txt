@@ -12,6 +12,7 @@ git
 cmake
 meson
 rust
+cargo
 zig
 go
 bash-completion
