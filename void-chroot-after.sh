@@ -49,7 +49,8 @@ chmod u+x /etc/cron.weekly/fstrim
 #ln -s /usr/bin/doas /usr/bin/sudo
 
 # set timezone
-ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+#ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # set unused tty not to start by default
 touch /etc/sv/agetty-tty6/down
