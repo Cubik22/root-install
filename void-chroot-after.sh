@@ -12,7 +12,7 @@ echo "$hostname" > /etc/hostname
 
 # set hosts
 echo -e "127.0.0.1\tlocalhost" > /etc/hosts
-echo -e "::1\tlocalhost" >> /etc/hosts
+echo -e "::1\t\tlocalhost" >> /etc/hosts
 echo -e "127.0.1.1\t${hostname}.localdomain\t${hostname}" >> /etc/hosts
 
 # set options in /etc/rc.conf (already done in root_install.sh)
