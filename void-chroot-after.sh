@@ -97,7 +97,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 # after changing /etc/default/grub run update-grub
 
 # create fstab file from the mounted system
-cp /proc/mounts /etc/fstab
+cat /proc/mounts >> /etc/fstab
 
 # modify /etc/fstab
 # add /tmp in ram and /swapfile
