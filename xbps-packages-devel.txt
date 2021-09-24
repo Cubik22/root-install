@@ -18,7 +18,4 @@ fmt-devel
 spdlog
 eudev-libudev-devel
 glib-devel
-gtk-layer-shell-devel
-gobject-introspection
-libgirepository-devel
 libnl3-devel
