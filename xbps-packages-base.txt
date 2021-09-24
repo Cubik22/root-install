@@ -11,6 +11,7 @@ pinentry
 grub-x86_64-efi
 git
 cmake
+spdlog
 meson
 rust
 cargo
