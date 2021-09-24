@@ -27,8 +27,8 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.rep
 # install devel packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" -R "https://mirrors.servercentral.com/voidlinux/current/musl" -R "https://alpha.us.repo.voidlinux.org/current/musl" $(cat xbps-packages-devel.txt)
 
-# in order to have network
-cp /etc/resolv.conf /mnt/etc/resolv.conf
+# in order to have network (setted manually after)
+#cp /etc/resolv.conf /mnt/etc/resolv.conf
 #cp /etc/hosts /mnt/etc/hosts
 
 # mount pseudo-filesystems
