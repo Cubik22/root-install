@@ -83,6 +83,12 @@ passwd $username
 # set user default shell
 chsh -s /bin/bash $username
 
+# change root PS1
+cat << EOF >> /root/.bashrc
+PS1="\[\e[1;31m\]\w\[\e[m\] \[\e[1;31m\]>\[\e[m\]\[\e[1;33m\]>\[\e[m\]\[\e[1;36m\]>\[\e[m\] "
+#PS1="\[\e[1;31m\][\u@\h \W]\$\[\e[m\] "
+EOF
+
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
 # install grub
