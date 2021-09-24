@@ -15,6 +15,9 @@ cat "${root_install}"/rc.conf > /etc/rc.conf
 # grub config file generator
 cat "${root_install}"/grub > /etc/default/grub
 
+# acpid handler
+cat "${root_install}"/handler.sh > /etc/acpi/handler.sh
+
 mkdir -p /etc/iwd
 
 # iwd config file
