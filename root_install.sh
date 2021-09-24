@@ -1,22 +1,30 @@
 #!/bin/sh
 
 # get the current directory
-root_install=$(pwd)
+root_install="$(pwd)"/files
 
 # adding global environment variables
-cat "${root_install}"/environment >> /etc/environment
+cat "${root_install}"/environment >> /etc/
 
 # setting locales
-cat "${root_install}"/locale.conf > /etc/locale.conf
+cat "${root_install}"/locale.conf > /etc/
 
 # rc initialization file
-cat "${root_install}"/rc.conf > /etc/rc.conf
+cat "${root_install}"/rc.conf > /etc/
 
 # grub config file generator
-cat "${root_install}"/grub > /etc/default/grub
+cat "${root_install}"/grub > /etc/default/
 
 # acpid handler
-cat "${root_install}"/handler.sh > /etc/acpi/handler.sh
+cat "${root_install}"/handler.sh > /etc/acpi/
+
+mkdir -p /etc/bash/bashrc.d
+
+# bash completion script
+cat "${root_install}"/bash_completion.sh > /etc/bash/bashrc.d/
+
+# bash complete alias
+cat "${root_install}"/complete_alias > /usr/share/bash-completion/
 
 mkdir -p /etc/iwd
 
