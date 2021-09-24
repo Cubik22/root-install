@@ -15,7 +15,6 @@ gtkmm-devel
 jsoncpp-devel
 libsigc++-devel	
 fmt-devel
-spdlog
 eudev-libudev-devel
 glib-devel
 libnl3-devel
