@@ -9,7 +9,6 @@ mkinitcpio-xbps
 scdoc
 cronie
 opendoas
-rng-tools
 gnupg2
 pinentry
 grub-x86_64-efi
