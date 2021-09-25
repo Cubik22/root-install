@@ -1,14 +1,16 @@
 #!/bin/sh
 
 # clone this repository already in /mnt (/mnt/root)
-echo "have you cloned this repository already in /mnt (/mnt/root)?"
+#echo "have you cloned this repository already in /mnt (/mnt/root)?"
 # before running this script mount /mnt and /mnt/boot
 echo "have you mounted /mnt and /mnt/boot and other partitions?"
 # if reinstalling remember to clean stuff in /mnt/boot
 echo "if reinstalling remember to clean stuff in /mnt/boot"
+echo
 
 # wait for input
 read -p "press any key to continue... " input
+echo
 
 # set xbps variables
 xbpsconf=/mnt/etc/xbps.d
@@ -48,4 +50,5 @@ mount --rbind /dev /mnt/dev
 mount --rbind /run /mnt/run
 
 # chroot into the new installation
-PS1='(chroot)# ' chroot /mnt/ /bin/bash
+echo "entering chroot:"
+echo "PS1=\"(chroot)# \" chroot /mnt/ /bin/bash"
