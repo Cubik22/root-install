@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # before running this script mount /mnt and /mnt/boot
+# if reinstalling remember to clean stuff in /mnt/boot
 # clone this repository already in /mnt (/mnt/root)
 
 # set xbps variables
