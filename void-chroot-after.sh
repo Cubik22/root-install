@@ -16,7 +16,10 @@ echo -e "::1\t\tlocalhost" >> /etc/hosts
 echo -e "127.0.1.1\t${hostname}.localdomain\t${hostname}" >> /etc/hosts
 
 # set DNS resolver (Cloudflare)
-echo "nameserver 1.1.1.1" > /etc/resolv.conf
+# if not using openresolv (resolvconf)
+#echo "nameserver 1.1.1.1" > /etc/resolv.conf
+# if using openresolv (resolvconf)
+echo "name_servers=1.1.1.1" >> /etc/resolvconf.conf
 
 # set dhcpcd to not touch /etc/resolv.conf and to not start wpa_supplicant
 # if using dhcpcd remember to uncomment the line below to autostart service
