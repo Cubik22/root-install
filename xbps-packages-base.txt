@@ -3,6 +3,9 @@ intel-ucode
 base-devel
 man-pages-devel
 man-pages-posix
+mkinitcpio
+mkinitcpio-udev
+mkinitcpio-xbps
 scdoc
 cronie
 opendoas
