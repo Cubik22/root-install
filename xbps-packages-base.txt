@@ -1,9 +1,8 @@
 base-system
+intel-ucode
 base-devel
 man-pages-devel
 man-pages-posix
-void-repo-nonfree
-intel-ucode
 scdoc
 cronie
 opendoas
