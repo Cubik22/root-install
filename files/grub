@@ -14,6 +14,10 @@ GRUB_CMDLINE_LINUX=""
 # Modules to preload
 #GRUB_PRELOAD_MODULES="part_gpt part_msdos"
 
+# Ensure that the root filesystem is mounted read-only so that systemd-fsck can run the check
+# This requires that /etc/grub.d/11_linux_root_fs is installed and enabled. 
+#GRUB_ROOT_FS_RO=true
+
 # Set to 'countdown' or 'hidden' to change timeout behavior,
 # press ESC key to display menu.
 GRUB_TIMEOUT_STYLE=menu
