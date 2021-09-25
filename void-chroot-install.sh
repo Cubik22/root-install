@@ -33,6 +33,9 @@ echo "ignorepkg=nvi" >> $ignorefile
 echo "ignorepkg=linux-firmware-amd" >> $ignorefile
 #echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
 
+# install non free repository in order to install intel-ucode
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" -R "https://mirrors.servercentral.com/voidlinux/current/musl" -R "https://alpha.us.repo.voidlinux.org/current/musl" void-repo-nonfree
+
 # install basic packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" -R "https://mirrors.servercentral.com/voidlinux/current/musl" -R "https://alpha.us.repo.voidlinux.org/current/musl" $(cat xbps-packages-base.txt)
 
