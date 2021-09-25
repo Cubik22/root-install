@@ -8,7 +8,7 @@ echo "have you mounted /mnt and /mnt/boot and other partitions?"
 echo "if reinstalling remember to clean stuff in /mnt/boot"
 
 # wait for input
-read -p "press any key to continue..." input
+read -p "press any key to continue... " input
 
 # set xbps variables
 xbpsconf=/mnt/etc/xbps.d
