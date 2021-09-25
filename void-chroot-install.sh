@@ -33,14 +33,18 @@ echo "ignorepkg=nvi" >> $ignorefile
 echo "ignorepkg=linux-firmware-amd" >> $ignorefile
 #echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
 
+repo1="https://alpha.de.repo.voidlinux.org/current/musl"
+repo2="https://mirrors.servercentral.com/voidlinux/current/musl"
+repo3="https://alpha.us.repo.voidlinux.org/current/musl"
+
 # install non free repository in order to install intel-ucode
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" -R "https://mirrors.servercentral.com/voidlinux/current/musl" -R "https://alpha.us.repo.voidlinux.org/current/musl" void-repo-nonfree
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 void-repo-nonfree
 
 # install basic packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" -R "https://mirrors.servercentral.com/voidlinux/current/musl" -R "https://alpha.us.repo.voidlinux.org/current/musl" $(cat xbps-packages-base.txt)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat xbps-packages-base.txt)
 
 # install devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R "https://alpha.de.repo.voidlinux.org/current/musl" -R "https://mirrors.servercentral.com/voidlinux/current/musl" -R "https://alpha.us.repo.voidlinux.org/current/musl" $(cat xbps-packages-devel.txt)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat xbps-packages-devel.txt)
 
 # in order to have network (setted manually after)
 #cp /etc/resolv.conf /mnt/etc/resolv.conf
