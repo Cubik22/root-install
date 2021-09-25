@@ -143,7 +143,9 @@ echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 # remove everything except /mnt and /mnt/boot
 # set them to / and /boot 0 1 and 0 2
 # use blkid to get UUID and set UUID= instead of path
+echo
 echo "remember to edit /etc/fstab"
+echo
 
 # ensure all installed packages are configured properly
 #xbps-reconfigure -fa
