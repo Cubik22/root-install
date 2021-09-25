@@ -113,10 +113,6 @@ passwd root
 # set root default shell
 chsh -s /bin/bash root
 
-# create groups not yet created
-groupadd bluetooth
-groupadd _seatd
-
 # create user
 useradd -m -G wheel,audio,video,input,bluetooth,_seatd $username
 echo "set password $username"
