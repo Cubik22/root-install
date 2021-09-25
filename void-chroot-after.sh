@@ -76,6 +76,7 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 # link services
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
+ln -s /etc/sv/openntpd /etc/runit/runsvdir/default/
 ln -s /etc/sv/cronie /etc/runit/runsvdir/default/
 #ln -s /etc/sv/dhcpcd /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
