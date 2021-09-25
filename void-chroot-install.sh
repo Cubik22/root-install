@@ -1,11 +1,9 @@
 #!/bin/sh
 
-# clone this repository already in /mnt (/mnt/root)
 #echo "have you cloned this repository already in /mnt (/mnt/root)?"
-# before running this script mount /mnt and /mnt/boot
 echo "have you mounted /mnt and /mnt/boot and other partitions?"
-# if reinstalling remember to clean stuff in /mnt/boot
 echo "if reinstalling remember to clean stuff in /mnt/boot"
+echo "if download of packages is slow stop the script and edit it choosing a fastest repo below"
 echo
 
 # wait for input
@@ -57,5 +55,6 @@ mount --rbind /dev /mnt/dev
 mount --rbind /run /mnt/run
 
 # chroot into the new installation
+echo "if you have cloned this repository not in /mnt copy it there (/mnt/root) before entering chroot"
 echo "entering chroot:"
 echo "PS1=\"(chroot)# \" chroot /mnt/ /bin/bash"
