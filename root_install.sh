@@ -18,6 +18,9 @@ cat "${root_install}"/grub > /etc/default/grub
 # acpid handler
 cat "${root_install}"/handler.sh > /etc/acpi/handler.sh
 
+# openntpd
+cat "${root_install}"/ntpd.conf > /etc/ntpd.conf
+
 mkdir -p /etc/bash/bashrc.d
 
 # bash completion script
