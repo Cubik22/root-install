@@ -69,13 +69,16 @@ ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
 ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
 ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
 
-# set bluetooth not to start by default
-touch /etc/sv/bluetoothd/down
-
 # set unused tty not to start by default
 touch /etc/sv/agetty-tty6/down
 touch /etc/sv/agetty-tty5/down
 touch /etc/sv/agetty-tty4/down
+
+# set bluetooth not to start by default
+touch /etc/sv/bluetoothd/down
+
+# make sure bluetooth is unblocked
+rfkill unblock bluetooth
 
 # create swap file
 dd if=/dev/zero of=/swapfile bs=1G count=4 status=progress
