@@ -49,10 +49,9 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 #cp /etc/hosts /mnt/etc/hosts
 
 # mount pseudo-filesystems
-mount -t proc none /mnt/proc
-mount -t sysfs none /mnt/sys
-mount --rbind /dev /mnt/dev
-mount --rbind /run /mnt/run
+mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
+mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev
+mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
 
 # chroot into the new installation
 echo "if you have cloned this repository not in /mnt copy it there (/mnt/root) before entering chroot"
