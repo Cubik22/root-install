@@ -60,18 +60,22 @@ chmod u+x /etc/cron.weekly/fstrim
 #ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
+# link services
+ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
+ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
+ln -s /etc/sv/cronie /etc/runit/runsvdir/default/
+ln -s /etc/sv/dhcpcd /etc/runit/runsvdir/default/
+ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
+ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
+ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
+
+# set bluetooth not to start by default
+touch /etc/sv/bluetoothd/down
+
 # set unused tty not to start by default
 touch /etc/sv/agetty-tty6/down
 touch /etc/sv/agetty-tty5/down
 touch /etc/sv/agetty-tty4/down
-
-# link services
-ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
-ln -s /etc/sv/cronie /etc/runit/runsvdir/default/
-ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
-ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
-ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
-ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
 
 # create swap file
 dd if=/dev/zero of=/swapfile bs=1G count=4 status=progress
