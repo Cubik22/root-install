@@ -76,9 +76,10 @@ chmod u+x /etc/cron.weekly/fstrim
 #ln -s /usr/bin/doas /usr/bin/sudo
 
 # set timezone
-ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+# if BIOS/UEFI clock is already set to the correct time use UTC
+#ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 #ln -sf /usr/share/zoneinfo/Etc/GMT+2 /etc/localtime
-#ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # link services
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
