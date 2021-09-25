@@ -146,12 +146,13 @@ echo
 echo "remember to edit /etc/fstab"
 echo "remove everything except / and /boot tmpfs and /swapfile"
 echo "set / and /boot to 0 1 and 0 2"
+echo "remove errors=remount-ro"
 echo "use blkid to get UUID and set UUID= instead of path"
 echo
 
 # ensure all installed packages are configured properly
 #xbps-reconfigure -fa
-echo "remember to run 'xbps-reconfigure -fa'"
+echo "remember to run 'xbps-reconfigure -fa' also after reboot"
 
 # exit chroot
 #exit
