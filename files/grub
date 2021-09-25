@@ -5,8 +5,10 @@ GRUB_TIMEOUT=5
 #GRUB_DISTRIBUTOR="Arch"
 #GRUB_DISTRIBUTOR="Artix"
 GRUB_DISTRIBUTOR="Void"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 net.ifnames=0"
-#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nowatchdog mem_sleep_default=deep reboot=pci"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"
+# net.ifnames=0 disable persistent network interface names by udevd
+# reboot=pci when reboot get stuck
+#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nowatchdog mem_sleep_default=deep net.ifnames=0 reboot=pci"
 GRUB_CMDLINE_LINUX=""
 
 # Modules to preload
