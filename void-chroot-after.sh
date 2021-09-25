@@ -1,7 +1,12 @@
 #!/bin/sh
 
-# execute after installation and in chroot
-# this script will run root_install.sh check everything is fine there
+echo "execute this script after installation and in chroot"
+echo "this script will run root_install.sh check everything is fine there"
+echo "you have to run this script from the root of the cloned directory"
+echo
+
+read -p "press any key to continue... " input
+echo
 
 # set variables
 username="lollo"
