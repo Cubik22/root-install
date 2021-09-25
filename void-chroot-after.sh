@@ -19,11 +19,12 @@ echo -e "127.0.1.1\t${hostname}.localdomain\t${hostname}" >> /etc/hosts
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 
 # set dhcpcd to not touch /etc/resolv.conf and to not start wpa_supplicant
-cat << EOF >> /etc/dhcpcd.conf
-
-# not touch /etc/resolv.conf and to not start wpa_supplicant
-nohook resolv.conf, wpa_supplicant
-EOF
+# if using dhcpcd remember to uncomment the line below to autostart service
+#cat << EOF >> /etc/dhcpcd.conf
+#
+## not touch /etc/resolv.conf and to not start wpa_supplicant
+#nohook resolv.conf, wpa_supplicant
+#EOF
 
 # set options in /etc/rc.conf (already done in root_install.sh)
 #cat << EOF >> /etc/rc.conf
@@ -71,7 +72,7 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
 ln -s /etc/sv/cronie /etc/runit/runsvdir/default/
-ln -s /etc/sv/dhcpcd /etc/runit/runsvdir/default/
+#ln -s /etc/sv/dhcpcd /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
 ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
 ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
