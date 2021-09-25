@@ -140,11 +140,12 @@ cat /proc/mounts >> /etc/fstab
 # add /tmp in ram and /swapfile
 echo "tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0" >> /etc/fstab
 echo "/swapfile none swap defaults 0 0" >> /etc/fstab
-# remove everything except /mnt and /mnt/boot
-# set them to / and /boot 0 1 and 0 2
-# use blkid to get UUID and set UUID= instead of path
+
 echo
 echo "remember to edit /etc/fstab"
+echo "remove everything except / and /boot tmpfs and /swapfile"
+echo "set / and /boot to 0 1 and 0 2"
+echo "use blkid to get UUID and set UUID= instead of path"
 echo
 
 # ensure all installed packages are configured properly
