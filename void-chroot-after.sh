@@ -18,6 +18,9 @@ echo -e "127.0.1.1\t${hostname}.localdomain\t${hostname}" >> /etc/hosts
 # set DNS resolver (Cloudflare)
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 
+# set dhcpcd to not touch /etc/resolv.conf and to not start wpa_supplicant
+echo "nohook resolv.conf, wpa_supplicant" >> /etc/dhcpcd.conf
+
 # set options in /etc/rc.conf (already done in root_install.sh)
 #cat << EOF >> /etc/rc.conf
 #
