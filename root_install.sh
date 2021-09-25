@@ -29,7 +29,7 @@ cat "${root_install}"/complete_alias > /usr/share/bash-completion/complete_alias
 mkdir -p /etc/iwd
 
 # iwd config file
-cp "${root_install}"/main.conf /etc/iwd/main.conf
+cat "${root_install}"/main.conf > /etc/iwd/main.conf
 
 # doas config file
 cat "${root_install}"/doas.conf > /etc/doas.conf
@@ -37,4 +37,4 @@ cat "${root_install}"/doas.conf > /etc/doas.conf
 chown -c root:root /etc/doas.conf
 chmod -c 0400 /etc/doas.conf
 
-ln -s "$(which doas)" /usr/bin/sudo
+ln -s /usr/bin/doas /usr/bin/sudo
