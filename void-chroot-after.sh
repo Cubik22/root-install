@@ -5,6 +5,7 @@ echo "this script will run root_install.sh check everything is fine there"
 echo "you have to run this script from the root of the cloned directory"
 echo
 
+# wait for input
 read -p "press any key to continue... " input
 echo
 
