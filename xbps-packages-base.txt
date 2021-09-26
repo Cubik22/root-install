@@ -1,5 +1,6 @@
 base-system
 intel-ucode
+iucode-tool
 base-devel
 man-pages-devel
 man-pages-posix
