@@ -22,8 +22,8 @@ cat "${root_install}"/handler.sh > /etc/acpi/handler.sh
 cat "${root_install}"/ntpd.conf > /etc/ntpd.conf
 
 # dracut custom config
-mkdir -p /etc/dracut.conf.d
-cat "${root_install}"/custom.conf > /etc/dracut.conf.d/custom.conf
+#mkdir -p /etc/dracut.conf.d
+#cat "${root_install}"/custom.conf > /etc/dracut.conf.d/custom.conf
 
 # ls colors (done at the user level)
 # remember to run eval "$(dircolors /etc/DIR_COLORS)"
