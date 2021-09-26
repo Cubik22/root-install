@@ -7,7 +7,7 @@ scdoc
 sysfsutils
 cronie
 opendoas
-gnupg2
+gnupg
 pinentry
 grub-x86_64-efi
 git
