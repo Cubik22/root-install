@@ -21,8 +21,8 @@ cat "${root_install}"/handler.sh > /etc/acpi/handler.sh
 # openntpd
 cat "${root_install}"/ntpd.conf > /etc/ntpd.conf
 
-# ls colors
-cat "{root_install}"/DIR_COLORS > /etc/DIR_COLORS
+# ls colors (done at the user level)
+#cat "{root_install}"/DIR_COLORS > /etc/DIR_COLORS
 
 mkdir -p /etc/bash/bashrc.d
 
