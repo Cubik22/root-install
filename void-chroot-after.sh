@@ -2,6 +2,7 @@
 
 echo "execute this script after installation and in chroot"
 echo "this script will run root_install.sh check everything is fine there"
+echo "check especiall grub /etc/default/grub"
 echo "you have to run this script from the root of the cloned directory"
 echo
 
@@ -22,15 +23,17 @@ echo -e "::1\t\tlocalhost" >> /etc/hosts
 echo -e "127.0.1.1\t${hostname}.localdomain\t${hostname}" >> /etc/hosts
 
 # set DNS resolver (Cloudflare)
-# if not using openresolv (resolvconf)
+
+# if not using openresolv (resolvconf) directly edit resolv.conf
 #echo "nameserver 1.1.1.1" > /etc/resolv.conf
 #echo "nameserver 1.0.0.1" >> /etc/resolv.conf
+
 # if using openresolv (resolvconf)
 echo "name_servers=\"1.1.1.1 1.0.0.1\"" >> /etc/resolvconf.conf
 
-# set dhcpcd to not touch /etc/resolv.conf and to not start wpa_supplicant
 # if using dhcpcd remember to uncomment the line below to autostart service and
 # to comment the line that makes xbps ignore it
+# set dhcpcd to not touch /etc/resolv.conf and to not start wpa_supplicant
 #cat << EOF >> /etc/dhcpcd.conf
 #
 ## not touch /etc/resolv.conf and to not start wpa_supplicant
@@ -77,7 +80,7 @@ chmod u+x /etc/cron.weekly/fstrim
 
 # set timezone
 # if BIOS/UEFI clock is already set to the correct time use UTC
-# if using OpenNTPD set the correct zone
+# if using OpenNTPD set the correct time zone
 ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 #ln -sf /usr/share/zoneinfo/Etc/GMT+2 /etc/localtime
 #ln -sf /usr/share/zoneinfo/UTC /etc/localtime
@@ -123,10 +126,11 @@ passwd $username
 chsh -s /bin/bash $username
 
 # change root PS1
-cat << EOF >> /root/.bashrc
-PS1="\[\e[1;31m\]\w\[\e[m\] \[\e[1;31m\]>\[\e[m\]\[\e[1;33m\]>\[\e[m\]\[\e[1;36m\]>\[\e[m\] "
-#PS1="\[\e[1;31m\][\u@\h \W]\$\[\e[m\] "
-EOF
+# not useful if then linking user bashrc to root 
+#cat << EOF >> /root/.bashrc
+#PS1="\[\e[1;31m\]\w\[\e[m\] \[\e[1;31m\]>\[\e[m\]\[\e[1;33m\]>\[\e[m\]\[\e[1;36m\]>\[\e[m\] "
+##PS1="\[\e[1;31m\][\u@\h \W]\$\[\e[m\] "
+#EOF
 
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
@@ -145,15 +149,16 @@ echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 
 echo
 echo "remember to edit /etc/fstab"
-echo "remove everything except / and /boot tmpfs and /swapfile"
+echo "remove everything except / /boot tmpfs /swapfile"
 echo "set / and /boot to 0 1 and 0 2"
-echo "remove errors=remount-ro"
+echo "remove errors=remount-ro if using mkinitcpio"
 echo "use blkid to get UUID and set UUID= instead of path"
 echo
 
 # ensure all installed packages are configured properly
 #xbps-reconfigure -fa
 echo "remember to run 'xbps-reconfigure -fa' also after reboot"
+echo "especially xbps-reconfigure -f linux{VERSION} which runs hooks"
 
 # exit chroot
 #exit
