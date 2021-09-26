@@ -27,7 +27,7 @@ cat "${root_install}"/custom.conf > /etc/dracut.conf.d/custom.conf
 
 # ls colors (done at the user level)
 # remember to run eval "$(dircolors /etc/DIR_COLORS)"
-#cat "{root_install}"/DIR_COLORS > /etc/DIR_COLORS
+cat "${root_install}"/DIR_COLORS > /etc/DIR_COLORS
 
 # bash completion script
 mkdir -p /etc/bash/bashrc.d
