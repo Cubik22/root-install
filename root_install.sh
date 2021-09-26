@@ -21,21 +21,23 @@ cat "${root_install}"/handler.sh > /etc/acpi/handler.sh
 # openntpd
 cat "${root_install}"/ntpd.conf > /etc/ntpd.conf
 
+# dracut custom config
+mkdir -p /etc/dracut.conf.d
+cat "${root_install}"/custom.conf > /etc/dracut.conf.d/custom.conf
+
 # ls colors (done at the user level)
 # remember to run eval "$(dircolors /etc/DIR_COLORS)"
 #cat "{root_install}"/DIR_COLORS > /etc/DIR_COLORS
 
-mkdir -p /etc/bash/bashrc.d
-
 # bash completion script
+mkdir -p /etc/bash/bashrc.d
 cat "${root_install}"/bash_completion.sh > /etc/bash/bashrc.d/bash_completion.sh
 
 # bash complete alias
 cat "${root_install}"/complete_alias > /usr/share/bash-completion/complete_alias
 
-mkdir -p /etc/iwd
-
 # iwd config file
+mkdir -p /etc/iwd
 cat "${root_install}"/main.conf > /etc/iwd/main.conf
 
 # doas config file
