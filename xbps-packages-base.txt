@@ -1,6 +1,9 @@
 base-system
 intel-ucode
 iucode-tool
+linux-headers
+linux-lts
+linux-lts-headers
 base-devel
 man-pages-devel
 man-pages-posix
@@ -78,6 +81,7 @@ bat
 nnn
 htop
 upower
+lm_sensors
 tlp
 powertop
 ncdu
