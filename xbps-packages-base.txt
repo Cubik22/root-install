@@ -4,6 +4,7 @@ base-devel
 man-pages-devel
 man-pages-posix
 scdoc
+sysfsutils
 cronie
 opendoas
 gnupg2
