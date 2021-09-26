@@ -13,14 +13,15 @@ if [ "x${BASH_VERSION-}" != x -a "x${PS1-}" != x -a "x${BASH_COMPLETION_VERSINFO
 				# Source complete alias
 				. /usr/share/bash-completion/complete_alias
 	    	fi
-	    	if [ -r /usr/share/bash-completion/completions/sudo ]; then
-				# Source complete sudo (for doas)
-				. /usr/share/bash-completion/completions/sudo
-	    	fi
-	    	if [ -r /usr/share/bash-completion/completions/git ]; then
-				# Source complete git (for config)
-				. /usr/share/bash-completion/completions/git
-	    	fi
+			# not useful, done with completion_loader
+	    	#if [ -r /usr/share/bash-completion/completions/sudo ]; then
+			#	# Source complete sudo (for doas)
+			#	. /usr/share/bash-completion/completions/sudo
+	    	#fi
+	    	#if [ -r /usr/share/bash-completion/completions/git ]; then
+			#	# Source complete git (for config)
+			#	. /usr/share/bash-completion/completions/git
+	    	#fi
         fi
     fi
 fi
