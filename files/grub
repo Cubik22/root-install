@@ -6,11 +6,23 @@ GRUB_TIMEOUT=5
 #GRUB_DISTRIBUTOR="Artix"
 GRUB_DISTRIBUTOR="Void"
 
-# reboot=pci when reboot get stuck
-# net.ifnames=0 disable persistent network interface names by udevd, useful when using iwd which destroy/recreate wireless interfaces at startup
-# intel settings: i915.enable_dc=2 i915.disable_power_well=0 i915.enable_fbc=1 i915.enable_guc=3 i915.enable_dpcd_backlight=1
-# trying to fix stuck at boot with intel_ucode, not sure: intel_iommu=igfx_off i915.enable_ips=0
-# disable intel_ucode, fuck intel: dis_ucode_ldr
+# when reboot get stuck
+# reboot=pci
+
+# disable persistent network interface names by udevd, useful when using iwd which destroy/recreate wireless interfaces at startup
+# net.ifnames=0
+
+# intel settings performance
+# i915.enable_dc=2 i915.disable_power_well=0 i915.enable_fbc=1 i915.enable_guc=3 i915.enable_dpcd_backlight=1
+
+# trying to fix stuck at boot with intel_ucode, not sure, not working
+# intel_iommu=igfx_off i915.enable_ips=0
+
+# disable intel_ucode, fuck intel
+# dis_ucode_ldr
+
+# disable automatic assembly of LVM, MD raids, DM raids and crypto LUKS  
+# rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0"
 
 # arch linux stuff
 #GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nowatchdog mem_sleep_default=deep"
