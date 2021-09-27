@@ -8,6 +8,7 @@ man-pages-posix
 scdoc
 sysfsutils
 psmisc
+xtools
 dcron
 opendoas
 gnupg
