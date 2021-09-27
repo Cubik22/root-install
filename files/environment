@@ -1,3 +1,8 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
 
 EDITOR=nvim
 VISUAL=nvim
@@ -24,6 +29,9 @@ DESKTOP_SESSION=river
 # seatd is more minimal
 LIBSEAT_BACKEND=seatd
 #LIBSEAT_BACKEND=logind
+
+# where cargo install packages by default
+CARGO_HOME=/usr/local
 
 # QT
 QT_QPA_PLATFORM=wayland-egl

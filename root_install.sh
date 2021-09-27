@@ -4,7 +4,7 @@
 root_install="$(pwd)"/files
 
 # adding global environment variables
-cat "${root_install}"/environment >> /etc/environment
+cat "${root_install}"/environment > /etc/environment
 
 # setting locales
 cat "${root_install}"/locale.conf > /etc/locale.conf
