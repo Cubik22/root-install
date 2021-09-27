@@ -39,10 +39,10 @@ repo3="https://alpha.us.repo.voidlinux.org/current/musl"
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 void-repo-nonfree
 
 # install basic packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat xbps-packages-base.txt)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat xbps-packages-base)
 
 # install devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat xbps-packages-devel.txt)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat xbps-packages-devel)
 
 # in order to have network (setted manually after)
 #cp /etc/resolv.conf /mnt/etc/resolv.conf
