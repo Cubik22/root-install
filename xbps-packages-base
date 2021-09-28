@@ -78,6 +78,7 @@ slurp
 fzf
 exa
 bat
+nvme-cli
 nnn
 htop
 upower
