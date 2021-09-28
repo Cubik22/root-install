@@ -23,6 +23,12 @@ cargo
 zig
 go
 bash-completion
+oksh
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
+zsh-history-substring-search
 shellcheck
 checkbashisms
 neovim
@@ -79,6 +85,7 @@ fzf
 exa
 bat
 nvme-cli
+trash-cli
 nnn
 htop
 upower
