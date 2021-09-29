@@ -29,7 +29,6 @@ zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
 zsh-history-substring-search
-starship
 zoxide
 shellcheck
 checkbashisms
