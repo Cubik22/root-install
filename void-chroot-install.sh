@@ -44,7 +44,7 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 # install devel packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat xbps-packages-devel)
 
-# in order to have network (setted manually after)
+# in order to have network (set manually after)
 #cp /etc/resolv.conf /mnt/etc/resolv.conf
 #cp /etc/hosts /mnt/etc/hosts
 
