@@ -88,6 +88,7 @@ ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 # link services
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
+ln -s /etc/sv/udevd /etc/runit/runsvdir/default/
 ln -s /etc/sv/openntpd /etc/runit/runsvdir/default/
 ln -s /etc/sv/dcron /etc/runit/runsvdir/default/
 #ln -s /etc/sv/dhcpcd /etc/runit/runsvdir/default/
